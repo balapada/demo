@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.pojo.Result;
 import com.example.demo.pojo.User;
 import com.example.demo.service.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public Result queryUserByUserId(@PathVariable Integer userId){
+    public Result queryUserByUserId(@PathVariable Integer userId) throws JsonProcessingException {
         log.info("根据userId查询用户");
         User user = userService.queryByUserId(userId);
         return Result.success(user);

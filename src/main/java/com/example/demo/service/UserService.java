@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.pojo.User;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.util.List;
 
@@ -25,5 +26,5 @@ public interface UserService {
      */
     void update(User user);
 
-    User queryByUserId(Integer userId);
+    User queryByUserId(Integer userId) throws JsonProcessingException;
 }
