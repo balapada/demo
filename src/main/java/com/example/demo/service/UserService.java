@@ -21,7 +21,9 @@ public interface UserService {
 
     /**
      * 修改用户
-     * @param user
+     * @param user 用户对象
      */
     void update(User user);
+
+    User queryByUserId(Integer userId);
 }

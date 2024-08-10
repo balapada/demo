@@ -18,4 +18,7 @@ public interface UserMapper {
     void insert(User user);
 
     void update(User user);
+
+    @Select("select userId, userName, createTime, updateTime from table_user where userId = #{userId}")
+    User queryByUserId(Integer userId);
 }

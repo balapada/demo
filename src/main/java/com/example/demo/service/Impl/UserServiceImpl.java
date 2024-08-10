@@ -18,8 +18,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> list() {
-        List<User> userList = userMapper.list();
-        return userList;
+        return userMapper.list();
     }
 
     @Override
@@ -38,5 +37,10 @@ public class UserServiceImpl implements UserService {
     public void update(User user) {
         user.setUpdateTime(LocalDateTime.now());
         userMapper.update(user);
+    }
+
+    @Override
+    public User queryByUserId(Integer userId) {
+        return userMapper.queryByUserId(userId);
     }
 }
